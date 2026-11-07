@@ -21,7 +21,7 @@ flowchart TB
   onprem[(On-prem DC)] -- S2S VPN --- vpn
   HUB <-- peering --> S1[Spoke: app-prod 10.10.0.0/16]
   HUB <-- peering --> S2[Spoke: app-nonprod 10.20.0.0/16]
-  S1 & S2 -. UDR 0.0.0.0/0 .-> fw
+  S1 & S2 -.->|UDR 0.0.0.0/0| fw
   LA[(Log Analytics)] --- HUB & S1 & S2
 ```
 
